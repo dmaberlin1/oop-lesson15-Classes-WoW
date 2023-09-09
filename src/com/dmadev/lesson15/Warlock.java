@@ -1,9 +1,11 @@
 package com.dmadev.lesson15;
 
 public final class Warlock extends Mage implements AbilityWarlock {
+    private Succubus succubus;
 
     public Warlock(String name,String type,int damage) {
         super(name,type, damage);
+        this.succubus=new Succubus("Queen of Succubus",2);
     }
 
     @Override
@@ -22,5 +24,45 @@ public final class Warlock extends Mage implements AbilityWarlock {
         makeDuration(1500);
         System.out.println('*'+petName+": I am destroyed your enemies!!!");;
         makeDuration();
+    }
+
+
+    @Override
+    public void attackEnemy(Enemy enemy) {
+//    super.attackEnemy();
+        makeDuration();
+        System.out.println('*'+getName()+" Attack with magic ");
+        succubus.attackEnemy(enemy);
+//        System.out.println('*'+enemy.getName()+'('+enemy.getHealth()+')'+" - "+getDamage());
+    }
+
+
+    private  class Succubus{
+        private String name;
+        private int damage;
+
+        public Succubus(String name, int damage) {
+            this.name = name;
+            this.damage = damage;
+        }
+        public void attackEnemy(Enemy enemy){
+            System.out.println(name+" and "+Warlock.this.getName() +" get allies damage");
+            enemy.takeDamage(damage+Warlock.this.getDamage());
+            makeDuration();
+        }
+    }
+
+    public static class Golem{
+        private String name;
+        private int damage;
+
+        public  Golem(String name, int damage) {
+            this.name = name;
+            this.damage = damage;
+        }
+        public void attackEnemy(Enemy enemy){
+            System.out.println(name+ " get allies damage");
+            enemy.takeDamage(damage);
+        }
     }
 }
