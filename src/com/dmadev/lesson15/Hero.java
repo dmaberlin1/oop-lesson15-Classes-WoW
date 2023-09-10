@@ -1,9 +1,10 @@
 package com.dmadev.lesson15;
 
-public abstract class Hero implements Duration {
+public abstract class Hero<T> implements Duration {
     private String name;
     private String type;
     private int damage;
+    private T weapon;
     public String getName() {
         return name;
     }
@@ -20,6 +21,14 @@ public abstract class Hero implements Duration {
 
     public int getDamage() {
         return damage;
+    }
+
+    public T getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(T weapon) {
+        this.weapon = weapon;
     }
 
     public String getType() {

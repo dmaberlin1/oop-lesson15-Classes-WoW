@@ -1,6 +1,7 @@
 package com.dmadev.lesson15;
+import com.dmadev.lesson15.weapon.MeeleWeapon;
 
-public  class  Warrior extends Hero{
+public  class  Warrior<T extends MeeleWeapon> extends Hero<T>{
 
     public Warrior(String name,String type,int damage) {
         super(name, type, damage);

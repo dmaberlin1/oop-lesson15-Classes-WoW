@@ -1,6 +1,8 @@
 package com.dmadev.lesson15;
 
-public final class Warlock extends Mage implements AbilityWarlock {
+import com.dmadev.lesson15.weapon.MagicWeapon;
+
+public final class Warlock<T extends MagicWeapon> extends Mage<T> implements AbilityWarlock {
     private Succubus succubus;
 
     public Warlock(String name,String type,int damage) {
