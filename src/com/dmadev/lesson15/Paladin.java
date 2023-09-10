@@ -1,8 +1,11 @@
 package com.dmadev.lesson15;
 
-import com.dmadev.lesson15.weapon.MeeleWeapon;
 
-public final class Paladin<T extends MeeleWeapon> extends Warrior<T> implements AbilityPaladin{
+
+import com.dmadev.lesson15.weapon.MeeleWeapon;
+import com.dmadev.lesson15.weapon.Weapon;
+
+public final class Paladin<T extends Weapon> extends Warrior<T> implements AbilityPaladin{
     public Paladin(String name, String type,int damage) {
         super(name,type, damage);
     }
