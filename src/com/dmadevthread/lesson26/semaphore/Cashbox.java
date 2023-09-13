@@ -1,4 +1,4 @@
-package com.dmadevthread.lesson25.queue;
+package com.dmadevthread.lesson26.semaphore;
 
 public class Cashbox {
     private int id;
